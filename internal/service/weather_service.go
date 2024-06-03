@@ -3,12 +3,10 @@ package service
 import (
 	"Weather-API-GoExpertPostGrad/internal/model"
 	"Weather-API-GoExpertPostGrad/internal/repository"
-	"net/url"
 )
 
 func GetWeather(location string) (float64, error) {
-	cityEncoded := url.QueryEscape(location)
-	return repository.FetchWeather(cityEncoded)
+	return repository.FetchWeather(location)
 }
 
 func NewTemperatureResponse(tempC float64) model.TemperatureResponse {

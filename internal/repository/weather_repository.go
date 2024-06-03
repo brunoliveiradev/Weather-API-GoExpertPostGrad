@@ -7,12 +7,14 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"net/url"
 )
 
+const apiKey = "e1fece5bce574041a9f130048241703"
+
 func FetchWeather(location string) (float64, error) {
-	apiKey := "e1fece5bce574041a9f130048241703"
 	client := httpclient.NewClient()
-	resp, err := client.Get(fmt.Sprintf("http://api.weatherapi.com/v1/current.json?key=%s&q=%s", apiKey, location))
+	resp, err := client.Get(fmt.Sprintf("http://api.weatherapi.com/v1/current.json?key=%s&q=%s", apiKey, url.QueryEscape(location)))
 	if err != nil {
 		return 0, err
 	}
