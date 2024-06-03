@@ -68,7 +68,7 @@ URL: `https://weather-by-zipcode-api-4w3swr2nrq-rj.a.run.app`
     ```
 3. Cep não encontrado deve retornar `404` com `can not find zipcode`:
     ```sh
-    curl https://weather-by-zipcode-api-4w3swr2nrq-rj.a.run.app/89216369
+    curl https://weather-by-zipcode-api-4w3swr2nrq-rj.a.run.app/99999999
     ```
 4. CEP inválido deve retornar `422` com `invalid zipcode`:
     ```sh
