@@ -11,7 +11,7 @@ RUN go mod verify
 
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux go build -v -o /app/main ./cmd
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -o /app/main ./cmd
 
 FROM alpine:latest
 WORKDIR /root/
